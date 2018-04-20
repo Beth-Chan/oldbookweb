@@ -455,11 +455,11 @@ function dealCollect(rs) {
 }
 
 function buy(t) {
-    var b_ID = $(t).attr('b_id');
+    var tel = $(t).attr('tel');
     // $.ajax({
     //     type: 'post',
     //     url: 'buy.php',
-    //     data: { b_ID: b_ID },
+    //     data: { tel: tel },
     //     dataType: 'JSON',
     //     success: function(rs) {
     //         if (rs != 0) {
@@ -476,7 +476,7 @@ function search() {
 
     } else {
         $.ajax({
-            url: 'search.php?keyword=' + $b_name,
+            url: 'search.php?keyword=' + b_name,
             data: {
                 b_name: b_name
             },

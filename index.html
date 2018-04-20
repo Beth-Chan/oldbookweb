@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style/reset.css" type="text/css"> 
     <link rel="stylesheet" href="style/index.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" > 
 </head>
 <body>
     <!-- 顶部导航 -->
@@ -24,10 +24,10 @@
         <div class="container">
             <div class="navbar-header">
                 <a href="index.html" class="navbar-brand logo"> <img src="images/logo.png" width="34" height="34" alt="校园旧书网"/></a>
-                <a href="index.html" class="navbar-brand logo-text" title="校园旧书网首页" target="_self"><strong>BookTaste</strong></a>
+                <a href="index.html" class="navbar-brand logo-text" title="校园旧书网首页" target="_self"><strong>校园旧书网</strong></a>
                 <!-- 搜索框 -->
                 <div class="search_box fl">
-                    <input class="search-input" type="text" placeholder="搜索从这里开始...">
+                    <input name="b_name" id="b_name" class="search-input" type="text" placeholder="搜索从这里开始...">
                     <a href="javascript:search();"><img src="images/icon-search.png" alt="搜索" width="16" height="16" class="icon-search"></a>
                 </div>
                 <!-- 响应式按钮 -->
@@ -92,18 +92,12 @@
                     </div>
                     <ul id="latest_ul">
                         <li class="latest_li">
-                            <div class="">
-                                <div class="cover">
-                                    <div class="thumbnail">
-                                    <a href="javascript:;"><img src="" class="pic"></a>
-                                        </div>
-                                </div>
-                                <div class="content">
-                                    <div class="name_and_price">
-                                        <div class="caption">
-                                        <span><a href="" target="_blank" id="bookName" title=""><strong class="bookname">&nbsp;</strong></a></span> <span class="smallprice"></span>
-                                            </div>
-                                    </div>
+                            <div class="cover">
+                                <a href="javascript:;"><img src="" class="pic"></a>
+                            </div>
+                            <div class="content">
+                                <div class="name_and_price">
+                                    <span><a href="" target="_blank" id="bookName" title=""><strong class="bookname">&nbsp;</strong></a></span> <span class="smallprice"></span>
                                 </div>
                             </div>
                         </li>
@@ -148,7 +142,6 @@
         <a href="javascript:forget();" id="forget">忘记密码？</a>
     </div> 
     <!--登录 END -->
-
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="layer/layer.js"></script>
     <script src="script/index.js"></script>

@@ -154,9 +154,11 @@
     }
 } 
 
- .pic {
-     width: 150px;
+.pic {
+    width: 150px;
     height: 180px; 
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 .price {
