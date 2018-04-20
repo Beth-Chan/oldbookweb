@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show">
+        
+    </div>
+    <input type="text" id="msg">
+    <input type="button" value="发送" onclick="sendMsg()">
+
+    <script>
+        // 创建WebSocket对象
+        var webSocket = new WebSocket("ws://127.0.0.1:8080");
+        webSocket.onopen = function() {
+            // 为onmessage事件绑定监听器，接受消息
+            webSocket.onmessage = function(event) {
+                // var msg = JSON.parse(event.data);
+               $("#show").innerHTML += event.data + "<br>";
+            };
+        };
+
+        webSocket.onerror = function() {
+
+        };
+
+        var sendMsg = function() {
+            var msg = $("#msg");
+            webSocket.send(msg.value);
+            msg.value = "";
+        };
+
+    </script>
+</body>
+</html>

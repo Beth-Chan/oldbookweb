@@ -1,0 +1,201 @@
+.logo {
+    margin-right: 8px;   
+    padding: 8px 0 8px 8px;
+}
+
+#myCarousel {
+    margin-top: 110px;
+    background-color: rgb(215, 230, 230);
+}
+
+.item img {
+    width: 350px;
+    height: 550px;
+}
+
+.carousel-inner img {
+    margin: 0 auto;
+}
+
+.latest {
+        margin: 75px;
+} 
+
+@media (max-width: 767px) {
+    .latest {
+        margin: 0;
+    }
+    .search_box {
+        display: none;
+    }
+} 
+
+@media (max-width: 991px) {
+    .latest {
+        margin: 0;
+    }
+} 
+
+.logo-text {
+    font-size: 26px;
+    font-family: HYLT;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: HYLT;
+    src: url('./fonts/HYLT.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.loginBox input, .regBox input {
+    width: 300px;
+    height: 40px;
+}
+
+.loginBox .loginbtn,
+.regBox .regbtn {
+    width: 300px;
+    height: 44px;
+    background-color: #551A8B;
+    display: block;
+    color: #fff;
+    text-align: center; /* 文字水平居中 */
+    line-height: 40px;  /* 文字垂直居中 */
+}
+
+ .loginItem {
+    margin: 15px 15px 5px 15px; 
+} 
+
+.loginBox,
+.regBox {
+    display: none;
+}
+
+#forget {
+    padding-left: 250px;
+    display: block;
+}
+
+.regBox {
+    margin-top: 6px;
+    margin-left: 15px;  
+}
+.regItem {
+    margin: 0 auto;
+    padding-top: 6px;
+    padding-bottom: 8px;
+}
+
+ .search_box {
+    padding-left: 320px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+} 
+
+.search-input {
+    width: 250px;
+    height: 24px;
+    border-radius: 42px;
+    border: 2px solid rgb(187, 180, 199);
+    outline: none;
+    position: relative;
+    font-size: 12px;
+    -moz-appearance: none !important;
+    -moz-border-radius: 10px !important;
+    padding-right: 1px !important;
+    padding-left: 8px !important; 
+}  
+
+.icon-search {
+    line-height: 35px;
+    position: absolute;
+    margin-left: 227px; 
+    margin-top: -33px;   
+} 
+
+  .search_box {
+    margin: 0 auto;
+}  
+
+ .bigtext {
+    font-size: 16px;
+}
+
+.more {
+    font-size: 5px;
+}
+
+.cover {
+    margin: 10px 20px 10px 0;  /* 出现过上下两列对不齐的问题，通过改这里解决 */
+    width: 150px;
+    height: 180px; 
+    -moz-box-shadow:0px 0px 7px #222;
+    -webkit-box-shadow:0px 0px 7px #222;
+    box-shadow:0px 0px 7px #222;
+    border: 8px solid transparent;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+}
+ #latest_ul .latest_li{
+    float: left;
+    margin-left: 25px;  
+ }
+ @media (max-width: 767px) {
+     .cover {
+        margin:10px 0;
+    } 
+    #latest_ul .latest_li {
+        margin-left: 3px;
+    }
+} 
+
+ .pic {
+     width: 150px;
+    height: 180px; 
+}
+
+.price {
+    font-size: 12px;
+}
+
+.giveforfree {
+    width: 100%;
+    height: 280px;
+}
+
+#details{
+    border: 8px solid transparent;
+    -moz-box-shadow:0px 0px 7px #222;
+    -webkit-box-shadow:0px 0px 7px #222;
+    box-shadow:0px 0px 7px #222;
+    display: none;   
+    padding-left: 70px;
+    padding-top: 60px; 
+    margin-top:  -480px ;
+    margin-left: 450px; 
+    width: 280px;
+    height: 250px;
+    background: url("../images/detailsbg.png"); 
+    opacity:0.9;
+    position: absolute;
+    z-index: 9999;
+}
+
+
+#bookName{
+    display: block;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    width:130px;
+}
+.smallprice{
+    position: relative;
+    padding-right: 80px;
+}
+

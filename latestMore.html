@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>最新发布列表</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <link href="style/reset.css" type="text/css" rel="stylesheet">
+    <link href="style/main.css" type="text/css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <script src="script/index.js"></script>
+</head>
+<style type="text/css">
+.page {
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+    margin-top: 270px;
+}
+
+.page a, .page span {
+    text-decoration: none;
+    border: 1px solid rgb(217, 167, 145);
+    padding: 5px 7px;
+    color: #767675;
+    cursor: pointer;
+}
+
+.page a:hover, .page span:hover {
+    background-color: rgb(217, 167, 145);
+    color: #fff;
+}
+</style>
+<body onload="readyinit()">
+    <div class="latest" style="margin: 50px 80px;">
+        <h2><strong class="bigtext">所有书籍</strong></h2>
+        <ul id="latest_ul">
+            <li class="latest_li">
+                <div class="cover">
+                    <a href="javascript:;"><img src="" class="pic"></a>
+                </div>
+                <div class="content">
+                    <div class="name_and_price">
+                        <span><a href="" target="_blank" id="bookName" title=""><strong class="bookname">&nbsp;</strong></a></span> &nbsp;&nbsp;&nbsp;
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="page">
+        <span class="disable" onclick="prepage()">&lt;上一页</span>
+        <span id="pagenum">
+
+        </span>
+        <span class="disable" onclick="nextpage()">下一页&gt;</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的收藏</title>
+    <link rel="stylesheet" href="./style/otherhtm.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 10px 5%;
+        }
+        table td {
+            width: 150px;
+            height: 20px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .img {
+            position: relative;
+        }
+        .checkbox {
+            position: absolute;
+            cursor: pointer;
+            top: 215px;
+            left: -75px;
+        }
+        a:hover{
+            cursor: pointer;
+            color: orange;
+        }
+        .title {
+            margin:20px auto;padding-left: 590px;
+        }
+    </style>
+</head>
+<body onload="mycollect()">
+    <div class="title"><h3>收藏列表</h3></div>
+    <div class="orderList">
+        <!-- 后续我会改掉收藏页的静态页面；并用表格布局的形式，改成用css布局 -->
+        <table>
+            <tr style="background-color: #ececec; width: 350px;">
+                <td colspan="6" style="text-align:left">
+                    <label >卖方ID：<label id="seller_ID">13602890496</label></label>
+                </td>
+            </tr>
+            <tr  class="img">
+                <td rowspan="2">
+                    <input type="checkbox" class="checkbox"/>
+                    <img src="images/books/doudou.jpg" id="bookCover" class="pic_url" width="100px" height="120px"/>
+                </td>
+                <td>
+                    <label>书籍ID</label>
+                </td>
+                <td>
+                    <label>书名</label>
+                </td>
+                <td>
+                    <label>单价</label>
+                </td>
+                <td>
+                    <label>数量</label>
+                </td>
+
+                <td rowspan="2">
+                    <a>移出收藏</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="b_ID">31</label>
+                </td>
+                <td>
+                    <label id="b_name">窗边的小豆豆</label>
+                </td>
+                <td>
+                    <label id="b_price">￥10</label>
+                </td>
+                <td>
+                    <label id="b_quantity">1</label>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
