@@ -1,5 +1,6 @@
 $(function() { // 是$(document).ready(function(){ // ... })形式的一种简写，即原生js的window.onload = function(){ // ... });
     check_latest();
+    getCarousel();
     if (getCookie("tel") != "") {
         $("#head_tel").html(getCookie("tel"));
         loginOrLogout();
@@ -16,8 +17,8 @@ function loginOrLogout() {
 }
 
 function check_latest() {
-    $.ajax({ // 通过 HTTP POST 请求从服务器载入数据。这是jQuery的Ajax函数，也可以写成$.post(url,data,success(data, textStatus, jqXHR),dataType)的形式;
-        type: 'post',
+    $.ajax({ // 通过 HTTP get 请求从服务器载入数据。这是jQuery的Ajax函数，也可以写成$.post(url,data,success(data, textStatus, jqXHR),dataType)的形式;
+        type: 'get',
         url: 'getLatestbook.php',
         data: {},
         dataType: 'JSON',
@@ -50,6 +51,28 @@ function deal_latest(rs) {
             "<span style='float:left;'>&nbsp;&nbsp;￥" + b_price + "</span></div> </div></div> </li>"
         );
     }
+}
+
+function getCarousel() {
+    $.ajax({
+        type: 'get',
+        url: 'getCarousel.php',
+        data: {},
+        dataType: 'JSON',
+        success: function(rs) {
+            if(rs != 0) {
+                deal_Carousel(rs);
+            }
+        }
+    });
+}
+
+function deal_Carousel(rs) {
+    for(var book of rs) {
+        var pic_url = book.pic_url;
+    }
+
+    $('#carousel-img').attr("src", pic_url);
 }
 
 function showLoginBox() {
@@ -104,20 +127,20 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     var expires = "expires=" + d.toUTCString();
     // 将cookie名称、值及其过期日期存入document.cookie对象
-    document.cookie = cname + "=" + cvalue + "; " + expires;
+    document.cookie = encodeURIComponent(cname) + "=" + encodeURIComponent(cvalue) + "; " + expires;
 }
 
 function getCookie(c_name) {
     // 检查document.cookie对象中是否存有cookie
     if (document.cookie.length > 0) {
         // 继续检查我们指定的cookie是否已储存
-        c_start = document.cookie.indexOf(c_name + "=")
+        c_start = document.cookie.indexOf(encodeURIComponent(c_name) + "=")
         if (c_start != -1) {
             c_start = c_start + c_name.length + 1
             c_end = document.cookie.indexOf(";", c_start)
             if (c_end == -1) c_end = document.cookie.length
             // 解码除了空格之外的其他字符，返回找到的cookie值
-            return decodeURI(document.cookie.substring(c_start, c_end))
+            return decodeURIComponent(document.cookie.substring(c_start, c_end))
         }
     }
     // 没有cookie时返回空字符串
@@ -318,12 +341,11 @@ function dealDetails(rs) {
         $("#b_author").html(book.b_author);
         $("#b_press").html(book.b_press);
         $("#b_price").html(book.b_price);
-        $("#addTime").html(book.addTime);
+        $("#addTime").html(book.addDate);
         $("#b_quantity").html(book.b_quantity);
         $("#collect").attr("b_id", book.b_ID);
         $("#buy").attr("b_id", book.b_ID);
-        $('#pic_url').val(book.pic_url);
-        $("#pic_url").src = book.pic_url;
+        $("#pic_url").attr("src", book.pic_url);
     }
 }
 
