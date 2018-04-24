@@ -1,7 +1,6 @@
 <?php 
 	include("conn/conn.php");
 
-	$list = array();
 	$db = new MyDB();
 	$count = 0;
 
