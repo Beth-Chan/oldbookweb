@@ -1,7 +1,6 @@
 <?php 
 	include("conn/conn.php");
 	
-	$list = array();
 	$db = new MyDB();
 	$b_ID = $_POST['b_ID'];
 	$tel = $_COOKIE['tel'];
